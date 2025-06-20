@@ -13,8 +13,8 @@ import 'package:background_canvas_example/main.dart';
 
 void main() {
   testWidgets('BackgroundCanvas Demo loads', (WidgetTester tester) async {
-    tester.binding.window.physicalSizeTestValue = const Size(1200, 800);
-    tester.binding.window.devicePixelRatioTestValue = 1.0;
+    tester.view.physicalSize = const Size(1200, 800);
+    tester.view.devicePixelRatio = 1.0;
     
     await tester.pumpWidget(const MyApp());
 
@@ -22,7 +22,7 @@ void main() {
     expect(find.text('Choose a preset:'), findsOneWidget);
     expect(find.text('Ocean Waves'), findsOneWidget);
     
-    addTearDown(tester.binding.window.clearPhysicalSizeTestValue);
+    addTearDown(tester.view.resetPhysicalSize);
   });
 
   testWidgets('BackgroundCanvasWidget renders without error', (WidgetTester tester) async {

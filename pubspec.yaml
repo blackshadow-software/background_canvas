@@ -1,6 +1,6 @@
 name: background_canvas
-description: "A Flutter package for creating dynamic, animated canvas backgrounds with 10 pattern types, real-time customization, color picker, glow effects, and mathematical precision."
-version: 2.0.0
+description: "A Flutter package for creating dynamic, animated canvas backgrounds with 40 unique pattern types inspired by macOS designs, enhanced molecular structures, smooth animations, real-time customization, transparent UI controls, glow effects, advanced mathematics, and full controllability."
+version: 5.0.0
 homepage: https://github.com/your-username/background_canvas
 
 environment:

@@ -12,6 +12,38 @@ enum BackgroundCanvasType {
   liquidMetal,
   noiseField,
   fractalTree,
+  neuralNetwork,
+  crystalFormation,
+  plasmaBall,
+  quantumField,
+  digitalRain,
+  cosmicWeb,
+  molecularStructure,
+  waveInterference,
+  // New unique canvas designs
+  fireworks,
+  aurora,
+  honeycomb,
+  mandala,
+  dnaHelix,
+  lavaLamp,
+  electricField,
+  magneticField,
+  rippleEffect,
+  kaleidoscope,
+  particleExplosion,
+  orbitalDance,
+  // New designs inspired by provided images
+  radialBurst,
+  flowingLayers,
+  radialSunset,
+  rainbowFlow,
+  angularWaves,
+  smoothGradients,
+  prismEffect,
+  liquidFlow,
+  energyField,
+  dimensionalRift,
 }
 
 class BackgroundCanvasWidget extends StatefulWidget {
@@ -59,11 +91,13 @@ class _BackgroundCanvasWidgetState extends State<BackgroundCanvasWidget>
 
   void _initializeAnimation() {
     _controller = AnimationController(
-      duration: widget.animationDuration,
+      duration: Duration(
+        milliseconds: (widget.animationDuration.inMilliseconds / widget.speed).round(),
+      ),
       vsync: this,
     );
     _animation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+      CurvedAnimation(parent: _controller, curve: Curves.linear), // Linear for smooth transitions
     );
 
     if (widget.animated) {
@@ -81,23 +115,24 @@ class _BackgroundCanvasWidgetState extends State<BackgroundCanvasWidget>
         _controller.repeat();
       } else {
         _controller.stop();
-        _controller.reset();
+        // Don't reset to maintain smooth continuation
       }
     }
     
-    // Handle duration changes
-    if (oldWidget.animationDuration != widget.animationDuration) {
-      _controller.dispose();
-      _initializeAnimation();
-    }
-
-    // Handle speed changes
-    if (oldWidget.speed != widget.speed) {
-      if (widget.animated) {
-        _controller.stop();
-        _controller.duration = Duration(
-          milliseconds: (widget.animationDuration.inMilliseconds / widget.speed).round(),
-        );
+    // Handle duration or speed changes
+    if (oldWidget.animationDuration != widget.animationDuration || 
+        oldWidget.speed != widget.speed) {
+      final wasAnimating = _controller.isAnimating;
+      final currentValue = _controller.value;
+      
+      _controller.stop();
+      _controller.duration = Duration(
+        milliseconds: (widget.animationDuration.inMilliseconds / widget.speed).round(),
+      );
+      
+      // Resume from current position for smooth transition
+      if (widget.animated && wasAnimating) {
+        _controller.forward(from: currentValue);
         _controller.repeat();
       }
     }
@@ -194,6 +229,276 @@ class _BackgroundCanvasWidgetState extends State<BackgroundCanvasWidget>
         );
       case BackgroundCanvasType.fractalTree:
         return FractalTreePainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.neuralNetwork:
+        return NeuralNetworkPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.crystalFormation:
+        return CrystalFormationPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.plasmaBall:
+        return PlasmaBallPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.quantumField:
+        return QuantumFieldPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.digitalRain:
+        return DigitalRainPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.cosmicWeb:
+        return CosmicWebPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.molecularStructure:
+        return MolecularStructurePainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.waveInterference:
+        return WaveInterferencePainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.fireworks:
+        return FireworksPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.aurora:
+        return AuroraPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.honeycomb:
+        return HoneycombPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.mandala:
+        return MandalaPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.dnaHelix:
+        return DnaHelixPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.lavaLamp:
+        return LavaLampPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.electricField:
+        return ElectricFieldPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.magneticField:
+        return MagneticFieldPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.rippleEffect:
+        return RippleEffectPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.kaleidoscope:
+        return KaleidoscopePainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.particleExplosion:
+        return ParticleExplosionPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.orbitalDance:
+        return OrbitalDancePainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.radialBurst:
+        return RadialBurstPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.flowingLayers:
+        return FlowingLayersPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.radialSunset:
+        return RadialSunsetPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.rainbowFlow:
+        return RainbowFlowPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.angularWaves:
+        return AngularWavesPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.smoothGradients:
+        return SmoothGradientsPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.prismEffect:
+        return PrismEffectPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.liquidFlow:
+        return LiquidFlowPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.energyField:
+        return EnergyFieldPainter(
+          colors: widget.colors,
+          animation: _animation,
+          intensity: widget.intensity,
+          opacity: widget.opacity,
+          enableGlow: widget.enableGlow,
+          glowRadius: widget.glowRadius,
+        );
+      case BackgroundCanvasType.dimensionalRift:
+        return DimensionalRiftPainter(
           colors: widget.colors,
           animation: _animation,
           intensity: widget.intensity,

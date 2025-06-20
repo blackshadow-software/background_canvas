@@ -99,6 +99,158 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
       'type': BackgroundCanvasType.fractalTree,
       'colors': BackgroundCanvasColorSchemes.forestGreen,
     },
+    {
+      'name': 'Neural Network',
+      'type': BackgroundCanvasType.neuralNetwork,
+      'colors': BackgroundCanvasColorSchemes.synthWave,
+    },
+    {
+      'name': 'Crystal Formation',
+      'type': BackgroundCanvasType.crystalFormation,
+      'colors': BackgroundCanvasColorSchemes.cosmicFusion,
+    },
+    {
+      'name': 'Plasma Ball',
+      'type': BackgroundCanvasType.plasmaBall,
+      'colors': BackgroundCanvasColorSchemes.fireAndIce,
+    },
+    {
+      'name': 'Quantum Field',
+      'type': BackgroundCanvasType.quantumField,
+      'colors': BackgroundCanvasColorSchemes.purpleDream,
+    },
+    {
+      'name': 'Digital Rain',
+      'type': BackgroundCanvasType.digitalRain,
+      'colors': BackgroundCanvasColorSchemes.neonMint,
+    },
+    {
+      'name': 'Cosmic Web',
+      'type': BackgroundCanvasType.cosmicWeb,
+      'colors': BackgroundCanvasColorSchemes.darkMatter,
+    },
+    {
+      'name': 'Molecular Structure',
+      'type': BackgroundCanvasType.molecularStructure,
+      'colors': BackgroundCanvasColorSchemes.oceanBlue,
+    },
+    {
+      'name': 'Wave Interference',
+      'type': BackgroundCanvasType.waveInterference,
+      'colors': BackgroundCanvasColorSchemes.sunsetGradient,
+    },
+    // New unique canvas designs
+    {
+      'name': 'Fireworks',
+      'type': BackgroundCanvasType.fireworks,
+      'colors': BackgroundCanvasColorSchemes.fireAndIce,
+    },
+    {
+      'name': 'Aurora',
+      'type': BackgroundCanvasType.aurora,
+      'colors': BackgroundCanvasColorSchemes.cosmicFusion,
+    },
+    {
+      'name': 'Honeycomb',
+      'type': BackgroundCanvasType.honeycomb,
+      'colors': BackgroundCanvasColorSchemes.neonMint,
+    },
+    {
+      'name': 'Mandala',
+      'type': BackgroundCanvasType.mandala,
+      'colors': BackgroundCanvasColorSchemes.purpleDream,
+    },
+    {
+      'name': 'DNA Helix',
+      'type': BackgroundCanvasType.dnaHelix,
+      'colors': BackgroundCanvasColorSchemes.synthWave,
+    },
+    {
+      'name': 'Lava Lamp',
+      'type': BackgroundCanvasType.lavaLamp,
+      'colors': BackgroundCanvasColorSchemes.retroWave,
+    },
+    {
+      'name': 'Electric Field',
+      'type': BackgroundCanvasType.electricField,
+      'colors': BackgroundCanvasColorSchemes.neonMint,
+    },
+    {
+      'name': 'Magnetic Field',
+      'type': BackgroundCanvasType.magneticField,
+      'colors': BackgroundCanvasColorSchemes.darkMatter,
+    },
+    {
+      'name': 'Ripple Effect',
+      'type': BackgroundCanvasType.rippleEffect,
+      'colors': BackgroundCanvasColorSchemes.oceanBlue,
+    },
+    {
+      'name': 'Kaleidoscope',
+      'type': BackgroundCanvasType.kaleidoscope,
+      'colors': BackgroundCanvasColorSchemes.cosmicFusion,
+    },
+    {
+      'name': 'Particle Explosion',
+      'type': BackgroundCanvasType.particleExplosion,
+      'colors': BackgroundCanvasColorSchemes.fireAndIce,
+    },
+    {
+      'name': 'Orbital Dance',
+      'type': BackgroundCanvasType.orbitalDance,
+      'colors': BackgroundCanvasColorSchemes.purpleDream,
+    },
+    // Image-inspired canvases
+    {
+      'name': 'Radial Burst',
+      'type': BackgroundCanvasType.radialBurst,
+      'colors': BackgroundCanvasColorSchemes.neonMint,
+    },
+    {
+      'name': 'Flowing Layers',
+      'type': BackgroundCanvasType.flowingLayers,
+      'colors': BackgroundCanvasColorSchemes.oceanBlue,
+    },
+    {
+      'name': 'Radial Sunset',
+      'type': BackgroundCanvasType.radialSunset,
+      'colors': BackgroundCanvasColorSchemes.sunsetGradient,
+    },
+    {
+      'name': 'Rainbow Flow',
+      'type': BackgroundCanvasType.rainbowFlow,
+      'colors': BackgroundCanvasColorSchemes.cosmicFusion,
+    },
+    {
+      'name': 'Angular Waves',
+      'type': BackgroundCanvasType.angularWaves,
+      'colors': BackgroundCanvasColorSchemes.retroWave,
+    },
+    {
+      'name': 'Smooth Gradients',
+      'type': BackgroundCanvasType.smoothGradients,
+      'colors': BackgroundCanvasColorSchemes.purpleDream,
+    },
+    {
+      'name': 'Prism Effect',
+      'type': BackgroundCanvasType.prismEffect,
+      'colors': BackgroundCanvasColorSchemes.fireAndIce,
+    },
+    {
+      'name': 'Liquid Flow',
+      'type': BackgroundCanvasType.liquidFlow,
+      'colors': BackgroundCanvasColorSchemes.oceanBlue,
+    },
+    {
+      'name': 'Energy Field',
+      'type': BackgroundCanvasType.energyField,
+      'colors': BackgroundCanvasColorSchemes.synthWave,
+    },
+    {
+      'name': 'Dimensional Rift',
+      'type': BackgroundCanvasType.dimensionalRift,
+      'colors': BackgroundCanvasColorSchemes.darkMatter,
+    },
   ];
 
   @override
@@ -115,21 +267,17 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
         glowRadius: glowRadius,
         animationDuration: const Duration(seconds: 4),
         child: SafeArea(
-          child: Column(
-            children: [
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
               Container(
-                margin: const EdgeInsets.all(16),
-                padding: const EdgeInsets.all(16),
+                margin: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.9),
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.1),
-                      blurRadius: 10,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
+                  color: Colors.black.withValues(alpha: 0.3),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,18 +285,32 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                     const Text(
                       'Background Canvas Demo',
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            offset: Offset(1, 1),
+                            blurRadius: 3,
+                            color: Colors.black54,
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 12),
                     const Text(
                       'Choose a preset:',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Colors.black87,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            offset: Offset(1, 1),
+                            blurRadius: 2,
+                            color: Colors.black54,
+                          ),
+                        ],
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -165,11 +327,19 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: currentType == preset['type']
-                                ? Colors.blue
-                                : Colors.grey[300],
+                                ? Colors.white.withValues(alpha: 0.9)
+                                : Colors.white.withValues(alpha: 0.2),
                             foregroundColor: currentType == preset['type']
-                                ? Colors.white
-                                : Colors.black87,
+                                ? Colors.black
+                                : Colors.white,
+                            elevation: currentType == preset['type'] ? 4 : 1,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              side: BorderSide(
+                                color: Colors.white.withValues(alpha: 0.3),
+                                width: 1,
+                              ),
+                            ),
                           ),
                           child: Text(preset['name']),
                         );
@@ -178,7 +348,13 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                     const SizedBox(height: 16),
                     Row(
                       children: [
-                        const Text('Intensity: '),
+                        const Text(
+                          'Intensity: ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         Expanded(
                           child: Slider(
                             value: intensity,
@@ -197,7 +373,13 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                     ),
                     Row(
                       children: [
-                        const Text('Speed: '),
+                        const Text(
+                          'Speed: ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         Expanded(
                           child: Slider(
                             value: speed,
@@ -216,7 +398,13 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                     ),
                     Row(
                       children: [
-                        const Text('Opacity: '),
+                        const Text(
+                          'Opacity: ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         Expanded(
                           child: Slider(
                             value: opacity,
@@ -235,7 +423,13 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                     ),
                     Row(
                       children: [
-                        const Text('Animated: '),
+                        const Text(
+                          'Animated: ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         Switch(
                           value: animated,
                           onChanged: (value) {
@@ -245,7 +439,13 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                           },
                         ),
                         const SizedBox(width: 20),
-                        const Text('Glow: '),
+                        const Text(
+                          'Glow: ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                         Switch(
                           value: enableGlow,
                           onChanged: (value) {
@@ -259,7 +459,13 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                     if (enableGlow)
                       Row(
                         children: [
-                          const Text('Glow Radius: '),
+                          const Text(
+                            'Glow Radius: ',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                           Expanded(
                             child: Slider(
                               value: glowRadius,
@@ -279,20 +485,13 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                   ],
                 ),
               ),
-              Flexible(
-                child: Container(
-                  margin: const EdgeInsets.all(16),
-                  padding: const EdgeInsets.all(16),
+              Container(
+                  margin: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.9),
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.1),
-                        blurRadius: 10,
-                        offset: const Offset(0, 5),
-                      ),
-                    ],
+                    color: Colors.black.withValues(alpha: 0.3),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1),
                   ),
                   child: SingleChildScrollView(
                     child: Column(
@@ -305,9 +504,16 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                             const Text(
                               'Current Colors:',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.black87,
+                                color: Colors.white,
+                                shadows: [
+                                  Shadow(
+                                    offset: Offset(1, 1),
+                                    blurRadius: 2,
+                                    color: Colors.black54,
+                                  ),
+                                ],
                               ),
                             ),
                             Row(
@@ -364,26 +570,33 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
                         const Text(
                           'Pattern Type:',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             fontWeight: FontWeight.w600,
-                            color: Colors.black87,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                offset: Offset(1, 1),
+                                blurRadius: 2,
+                                color: Colors.black54,
+                              ),
+                            ],
                           ),
                         ),
                         const SizedBox(height: 8),
                         Text(
                           currentType.toString().split('.').last,
                           style: const TextStyle(
-                            fontSize: 14,
+                            fontSize: 12,
                             fontStyle: FontStyle.italic,
-                            color: Colors.black54,
+                            color: Colors.white70,
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
