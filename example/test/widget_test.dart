@@ -7,21 +7,54 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:background_canvas/background_canvas.dart';
 
 import 'package:background_canvas_example/main.dart';
 
 void main() {
-  testWidgets('Verify Platform version', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('BackgroundCanvas Demo loads', (WidgetTester tester) async {
+    tester.binding.window.physicalSizeTestValue = const Size(1200, 800);
+    tester.binding.window.devicePixelRatioTestValue = 1.0;
+    
     await tester.pumpWidget(const MyApp());
 
-    // Verify that platform version is retrieved.
-    expect(
-      find.byWidgetPredicate(
-        (Widget widget) => widget is Text &&
-                           widget.data!.startsWith('Running on:'),
+    expect(find.text('Background Canvas Demo'), findsOneWidget);
+    expect(find.text('Choose a preset:'), findsOneWidget);
+    expect(find.text('Ocean Waves'), findsOneWidget);
+    
+    addTearDown(tester.binding.window.clearPhysicalSizeTestValue);
+  });
+
+  testWidgets('BackgroundCanvasWidget renders without error', (WidgetTester tester) async {
+    await tester.pumpWidget(MaterialApp(
+      home: BackgroundCanvasWidget(
+        colors: const [
+          Color(0xFF667eea),
+          Color(0xFF764ba2),
+        ],
+        type: BackgroundCanvasType.fluidWaves,
+        animated: false,
+        child: const Text('Test Child'),
       ),
-      findsOneWidget,
-    );
+    ));
+
+    expect(find.text('Test Child'), findsOneWidget);
+    await tester.pump();
+  });
+
+  testWidgets('All BackgroundCanvasType variants work', (WidgetTester tester) async {
+    for (final type in BackgroundCanvasType.values) {
+      await tester.pumpWidget(MaterialApp(
+        home: BackgroundCanvasWidget(
+          colors: const [
+            Color(0xFF667eea),
+            Color(0xFF764ba2),
+          ],
+          type: type,
+          animated: false,
+        ),
+      ));
+      await tester.pump();
+    }
   });
 }

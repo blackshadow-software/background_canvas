@@ -1,14 +1,5 @@
-// You have generated a new plugin project without specifying the `--platforms`
-// flag. A plugin project with no platform support was generated. To add a
-// platform, run `flutter create -t plugin --platforms <platforms> .` under the
-// same directory. You can also find a detailed instruction on how to add
-// platforms in the `pubspec.yaml` at
-// https://flutter.dev/to/pubspec-plugin-platforms.
+library background_canvas;
 
-import 'background_canvas_platform_interface.dart';
-
-class BackgroundCanvas {
-  Future<String?> getPlatformVersion() {
-    return BackgroundCanvasPlatform.instance.getPlatformVersion();
-  }
-}
+export 'canvas/background_canvas_widget.dart';
+export 'canvas/canvas_painters.dart';
+export 'canvas/color_schemes.dart';
