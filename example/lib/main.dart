@@ -12,10 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Background Canvas Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        useMaterial3: true,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: true),
       home: const BackgroundCanvasDemo(),
     );
   }
@@ -39,11 +36,7 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
   double glowRadius = 10.0;
 
   final List<Map<String, dynamic>> presets = [
-    {
-      'name': 'Ocean Waves',
-      'type': BackgroundCanvasType.fluidWaves,
-      'colors': BackgroundCanvasColorSchemes.oceanBlue,
-    },
+    {'name': 'Ocean Waves', 'type': BackgroundCanvasType.fluidWaves, 'colors': BackgroundCanvasColorSchemes.oceanBlue},
     {
       'name': 'Sunset Layers',
       'type': BackgroundCanvasType.layeredCurves,
@@ -89,11 +82,7 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
       'type': BackgroundCanvasType.liquidMetal,
       'colors': BackgroundCanvasColorSchemes.synthWave,
     },
-    {
-      'name': 'Noise Field',
-      'type': BackgroundCanvasType.noiseField,
-      'colors': BackgroundCanvasColorSchemes.neonMint,
-    },
+    {'name': 'Noise Field', 'type': BackgroundCanvasType.noiseField, 'colors': BackgroundCanvasColorSchemes.neonMint},
     {
       'name': 'Fractal Tree',
       'type': BackgroundCanvasType.fractalTree,
@@ -109,26 +98,14 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
       'type': BackgroundCanvasType.crystalFormation,
       'colors': BackgroundCanvasColorSchemes.cosmicFusion,
     },
-    {
-      'name': 'Plasma Ball',
-      'type': BackgroundCanvasType.plasmaBall,
-      'colors': BackgroundCanvasColorSchemes.fireAndIce,
-    },
+    {'name': 'Plasma Ball', 'type': BackgroundCanvasType.plasmaBall, 'colors': BackgroundCanvasColorSchemes.fireAndIce},
     {
       'name': 'Quantum Field',
       'type': BackgroundCanvasType.quantumField,
       'colors': BackgroundCanvasColorSchemes.purpleDream,
     },
-    {
-      'name': 'Digital Rain',
-      'type': BackgroundCanvasType.digitalRain,
-      'colors': BackgroundCanvasColorSchemes.neonMint,
-    },
-    {
-      'name': 'Cosmic Web',
-      'type': BackgroundCanvasType.cosmicWeb,
-      'colors': BackgroundCanvasColorSchemes.darkMatter,
-    },
+    {'name': 'Digital Rain', 'type': BackgroundCanvasType.digitalRain, 'colors': BackgroundCanvasColorSchemes.neonMint},
+    {'name': 'Cosmic Web', 'type': BackgroundCanvasType.cosmicWeb, 'colors': BackgroundCanvasColorSchemes.darkMatter},
     {
       'name': 'Molecular Structure',
       'type': BackgroundCanvasType.molecularStructure,
@@ -140,36 +117,12 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
       'colors': BackgroundCanvasColorSchemes.sunsetGradient,
     },
     // New unique canvas designs
-    {
-      'name': 'Fireworks',
-      'type': BackgroundCanvasType.fireworks,
-      'colors': BackgroundCanvasColorSchemes.fireAndIce,
-    },
-    {
-      'name': 'Aurora',
-      'type': BackgroundCanvasType.aurora,
-      'colors': BackgroundCanvasColorSchemes.cosmicFusion,
-    },
-    {
-      'name': 'Honeycomb',
-      'type': BackgroundCanvasType.honeycomb,
-      'colors': BackgroundCanvasColorSchemes.neonMint,
-    },
-    {
-      'name': 'Mandala',
-      'type': BackgroundCanvasType.mandala,
-      'colors': BackgroundCanvasColorSchemes.purpleDream,
-    },
-    {
-      'name': 'DNA Helix',
-      'type': BackgroundCanvasType.dnaHelix,
-      'colors': BackgroundCanvasColorSchemes.synthWave,
-    },
-    {
-      'name': 'Lava Lamp',
-      'type': BackgroundCanvasType.lavaLamp,
-      'colors': BackgroundCanvasColorSchemes.retroWave,
-    },
+    {'name': 'Fireworks', 'type': BackgroundCanvasType.fireworks, 'colors': BackgroundCanvasColorSchemes.fireAndIce},
+    {'name': 'Aurora', 'type': BackgroundCanvasType.aurora, 'colors': BackgroundCanvasColorSchemes.cosmicFusion},
+    {'name': 'Honeycomb', 'type': BackgroundCanvasType.honeycomb, 'colors': BackgroundCanvasColorSchemes.neonMint},
+    {'name': 'Mandala', 'type': BackgroundCanvasType.mandala, 'colors': BackgroundCanvasColorSchemes.purpleDream},
+    {'name': 'DNA Helix', 'type': BackgroundCanvasType.dnaHelix, 'colors': BackgroundCanvasColorSchemes.synthWave},
+    {'name': 'Lava Lamp', 'type': BackgroundCanvasType.lavaLamp, 'colors': BackgroundCanvasColorSchemes.retroWave},
     {
       'name': 'Electric Field',
       'type': BackgroundCanvasType.electricField,
@@ -201,11 +154,7 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
       'colors': BackgroundCanvasColorSchemes.purpleDream,
     },
     // Image-inspired canvases
-    {
-      'name': 'Radial Burst',
-      'type': BackgroundCanvasType.radialBurst,
-      'colors': BackgroundCanvasColorSchemes.neonMint,
-    },
+    {'name': 'Radial Burst', 'type': BackgroundCanvasType.radialBurst, 'colors': BackgroundCanvasColorSchemes.neonMint},
     {
       'name': 'Flowing Layers',
       'type': BackgroundCanvasType.flowingLayers,
@@ -236,11 +185,7 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
       'type': BackgroundCanvasType.prismEffect,
       'colors': BackgroundCanvasColorSchemes.fireAndIce,
     },
-    {
-      'name': 'Liquid Flow',
-      'type': BackgroundCanvasType.liquidFlow,
-      'colors': BackgroundCanvasColorSchemes.oceanBlue,
-    },
+    {'name': 'Liquid Flow', 'type': BackgroundCanvasType.liquidFlow, 'colors': BackgroundCanvasColorSchemes.oceanBlue},
     {
       'name': 'Energy Field',
       'type': BackgroundCanvasType.energyField,
@@ -267,336 +212,276 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
         glowRadius: glowRadius,
         animationDuration: const Duration(seconds: 4),
         child: SafeArea(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-              Container(
-                margin: const EdgeInsets.all(8),
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.black.withValues(alpha: 0.3),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Background Canvas Demo',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        shadows: [
-                          Shadow(
-                            offset: Offset(1, 1),
-                            blurRadius: 3,
-                            color: Colors.black54,
+          child: Stack(
+            children: [
+              // Top: Horizontal Scrollable Presets
+              Positioned(
+                top: 8,
+                left: 8,
+                right: 8,
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.1), width: 1),
+                  ),
+                  child: Column(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(top: 4, left: 8),
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Presets',
+                            style: TextStyle(fontSize: 10, color: Colors.white70, fontWeight: FontWeight.bold),
                           ),
-                        ],
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 12),
-                    const Text(
-                      'Choose a preset:',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                        shadows: [
-                          Shadow(
-                            offset: Offset(1, 1),
-                            blurRadius: 2,
-                            color: Colors.black54,
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
-                      children: presets.map((preset) {
-                        return ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              currentType = preset['type'];
-                              currentColors = List<Color>.from(preset['colors']);
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: currentType == preset['type']
-                                ? Colors.white.withValues(alpha: 0.9)
-                                : Colors.white.withValues(alpha: 0.2),
-                            foregroundColor: currentType == preset['type']
-                                ? Colors.black
-                                : Colors.white,
-                            elevation: currentType == preset['type'] ? 4 : 1,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8),
-                              side: BorderSide(
-                                color: Colors.white.withValues(alpha: 0.3),
-                                width: 1,
+                      Expanded(
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: presets.length,
+                          padding: const EdgeInsets.symmetric(horizontal: 4),
+                          itemBuilder: (context, index) {
+                            final preset = presets[index];
+                            return Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 2),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    currentType = preset['type'];
+                                    currentColors = List<Color>.from(preset['colors']);
+                                  });
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: currentType == preset['type']
+                                      ? Colors.white.withValues(alpha: 0.9)
+                                      : Colors.white.withValues(alpha: 0.15),
+                                  foregroundColor: currentType == preset['type'] ? Colors.black : Colors.white,
+                                  elevation: currentType == preset['type'] ? 2 : 0,
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                  minimumSize: const Size(60, 30),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+                                ),
+                                child: Text(
+                                  preset['name'],
+                                  style: const TextStyle(fontSize: 10),
+                                  textAlign: TextAlign.center,
+                                ),
                               ),
-                            ),
-                          ),
-                          child: Text(preset['name']),
-                        );
-                      }).toList(),
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        const Text(
-                          'Intensity: ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Expanded(
-                          child: Slider(
-                            value: intensity,
-                            min: 0.1,
-                            max: 2.0,
-                            divisions: 19,
-                            label: intensity.toStringAsFixed(1),
-                            onChanged: (value) {
-                              setState(() {
-                                intensity = value;
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Text(
-                          'Speed: ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Expanded(
-                          child: Slider(
-                            value: speed,
-                            min: 0.1,
-                            max: 3.0,
-                            divisions: 29,
-                            label: speed.toStringAsFixed(1),
-                            onChanged: (value) {
-                              setState(() {
-                                speed = value;
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Text(
-                          'Opacity: ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Expanded(
-                          child: Slider(
-                            value: opacity,
-                            min: 0.1,
-                            max: 1.0,
-                            divisions: 9,
-                            label: opacity.toStringAsFixed(1),
-                            onChanged: (value) {
-                              setState(() {
-                                opacity = value;
-                              });
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Text(
-                          'Animated: ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        Switch(
-                          value: animated,
-                          onChanged: (value) {
-                            setState(() {
-                              animated = value;
-                            });
+                            );
                           },
                         ),
-                        const SizedBox(width: 20),
-                        const Text(
-                          'Glow: ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // Left Side: Color Change Options
+              Align(
+                alignment: Alignment.centerLeft,
+
+                child: Container(
+                  width: 100,
+                  height: 200,
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.1), width: 1),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Colors',
+                        style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white70),
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          IconButton(
+                            onPressed: _addRandomColor,
+                            icon: const Icon(Icons.add, color: Colors.white),
+                            iconSize: 16,
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(minWidth: 24, minHeight: 24),
                           ),
-                        ),
-                        Switch(
-                          value: enableGlow,
-                          onChanged: (value) {
-                            setState(() {
-                              enableGlow = value;
-                            });
+                          IconButton(
+                            onPressed: _removeLastColor,
+                            icon: const Icon(Icons.remove, color: Colors.white),
+                            iconSize: 16,
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(minWidth: 24, minHeight: 24),
+                          ),
+                          IconButton(
+                            onPressed: _shuffleColors,
+                            icon: const Icon(Icons.shuffle, color: Colors.white),
+                            iconSize: 16,
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(minWidth: 24, minHeight: 24),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Expanded(
+                        child: GridView.builder(
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            crossAxisSpacing: 4,
+                            mainAxisSpacing: 4,
+                            childAspectRatio: 1,
+                          ),
+                          itemCount: currentColors.length,
+                          itemBuilder: (context, index) {
+                            return GestureDetector(
+                              onTap: () => _editColor(index),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: currentColors[index],
+                                  borderRadius: BorderRadius.circular(4),
+                                  border: Border.all(color: Colors.white.withValues(alpha: 0.3), width: 1),
+                                ),
+                                child: const Icon(Icons.edit, color: Colors.white, size: 12),
+                              ),
+                            );
                           },
                         ),
-                      ],
-                    ),
-                    if (enableGlow)
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Switch(
+                            value: animated,
+                            onChanged: (value) {
+                              setState(() {
+                                animated = value;
+                              });
+                            },
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          const Text('Anim', style: TextStyle(color: Colors.white, fontSize: 8)),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Switch(
+                            value: enableGlow,
+                            onChanged: (value) {
+                              setState(() {
+                                enableGlow = value;
+                              });
+                            },
+                            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          ),
+                          const Text('Glow', style: TextStyle(color: Colors.white, fontSize: 8)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              // Bottom Center: Small Progress Bars
+              Positioned(
+                bottom: 8,
+                left: MediaQuery.of(context).size.width * 0.25,
+                right: MediaQuery.of(context).size.width * 0.25,
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: Colors.black.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.white.withValues(alpha: 0.1), width: 1),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
                       Row(
                         children: [
-                          const Text(
-                            'Glow Radius: ',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
+                          const Text('I', style: TextStyle(color: Colors.white, fontSize: 10)),
                           Expanded(
                             child: Slider(
-                              value: glowRadius,
-                              min: 1.0,
-                              max: 30.0,
-                              divisions: 29,
-                              label: glowRadius.toStringAsFixed(0),
+                              value: intensity,
+                              min: 0.1,
+                              max: 2.0,
                               onChanged: (value) {
                                 setState(() {
-                                  glowRadius = value;
+                                  intensity = value;
                                 });
                               },
                             ),
                           ),
+                          Text(intensity.toStringAsFixed(1), style: const TextStyle(color: Colors.white, fontSize: 8)),
                         ],
                       ),
-                  ],
-                ),
-              ),
-              Container(
-                  margin: const EdgeInsets.all(8),
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withValues(alpha: 0.3),
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1),
-                  ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
+                      Row(
+                        children: [
+                          const Text('S', style: TextStyle(color: Colors.white, fontSize: 10)),
+                          Expanded(
+                            child: Slider(
+                              value: speed,
+                              min: 0.1,
+                              max: 3.0,
+                              onChanged: (value) {
+                                setState(() {
+                                  speed = value;
+                                });
+                              },
+                            ),
+                          ),
+                          Text(speed.toStringAsFixed(1), style: const TextStyle(color: Colors.white, fontSize: 8)),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          const Text('O', style: TextStyle(color: Colors.white, fontSize: 10)),
+                          Expanded(
+                            child: Slider(
+                              value: opacity,
+                              min: 0.1,
+                              max: 1.0,
+                              onChanged: (value) {
+                                setState(() {
+                                  opacity = value;
+                                });
+                              },
+                            ),
+                          ),
+                          Text(opacity.toStringAsFixed(1), style: const TextStyle(color: Colors.white, fontSize: 8)),
+                        ],
+                      ),
+                      if (enableGlow)
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text(
-                              'Current Colors:',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white,
-                                shadows: [
-                                  Shadow(
-                                    offset: Offset(1, 1),
-                                    blurRadius: 2,
-                                    color: Colors.black54,
-                                  ),
-                                ],
+                            const Text('G', style: TextStyle(color: Colors.white, fontSize: 10)),
+                            Expanded(
+                              child: Slider(
+                                value: glowRadius,
+                                min: 1.0,
+                                max: 30.0,
+                                onChanged: (value) {
+                                  setState(() {
+                                    glowRadius = value;
+                                  });
+                                },
                               ),
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                IconButton(
-                                  onPressed: _addRandomColor,
-                                  icon: const Icon(Icons.add),
-                                  tooltip: 'Add Random Color',
-                                  iconSize: 20,
-                                ),
-                                IconButton(
-                                  onPressed: _removeLastColor,
-                                  icon: const Icon(Icons.remove),
-                                  tooltip: 'Remove Last Color',
-                                  iconSize: 20,
-                                ),
-                                IconButton(
-                                  onPressed: _shuffleColors,
-                                  icon: const Icon(Icons.shuffle),
-                                  tooltip: 'Shuffle Colors',
-                                  iconSize: 20,
-                                ),
-                              ],
+                            Text(
+                              glowRadius.toStringAsFixed(0),
+                              style: const TextStyle(color: Colors.white, fontSize: 8),
                             ),
                           ],
                         ),
-                        const SizedBox(height: 8),
-                        Wrap(
-                          spacing: 8,
-                          children: currentColors.asMap().entries.map((entry) {
-                            final index = entry.key;
-                            final color = entry.value;
-                            return GestureDetector(
-                              onTap: () => _editColor(index),
-                              child: Container(
-                                width: 40,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: color,
-                                  borderRadius: BorderRadius.circular(8),
-                                  border: Border.all(color: Colors.white, width: 2),
-                                ),
-                                child: const Icon(
-                                  Icons.edit,
-                                  color: Colors.white,
-                                  size: 16,
-                                ),
-                              ),
-                            );
-                          }).toList(),
-                        ),
-                        const SizedBox(height: 16),
-                        const Text(
-                          'Pattern Type:',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                            shadows: [
-                              Shadow(
-                                offset: Offset(1, 1),
-                                blurRadius: 2,
-                                color: Colors.black54,
-                              ),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          currentType.toString().split('.').last,
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontStyle: FontStyle.italic,
-                            color: Colors.white70,
-                          ),
-                        ),
-                      ],
-                    ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -606,21 +491,21 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
   void _addRandomColor() {
     setState(() {
       final random = DateTime.now().millisecondsSinceEpoch;
-      currentColors.add(Color((random * 0x1000000).toInt()).withValues(alpha: 1.0));
+      currentColors = List<Color>.from(currentColors)..add(Color((random * 0x1000000).toInt()).withValues(alpha: 1.0));
     });
   }
 
   void _removeLastColor() {
     if (currentColors.length > 1) {
       setState(() {
-        currentColors.removeLast();
+        currentColors = List<Color>.from(currentColors)..removeLast();
       });
     }
   }
 
   void _shuffleColors() {
     setState(() {
-      currentColors.shuffle();
+      currentColors = List<Color>.from(currentColors)..shuffle();
     });
   }
 
@@ -644,46 +529,42 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
               const SizedBox(height: 10),
               Wrap(
                 spacing: 8,
-                children: [
-                  Colors.red,
-                  Colors.blue,
-                  Colors.green,
-                  Colors.purple,
-                  Colors.orange,
-                  Colors.pink,
-                  Colors.cyan,
-                  Colors.amber,
-                  Colors.indigo,
-                  Colors.teal,
-                ].map((color) {
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        currentColors[index] = color;
-                      });
-                      Navigator.of(context).pop();
-                    },
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: color,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.grey, width: 1),
-                      ),
-                    ),
-                  );
-                }).toList(),
+                children:
+                    [
+                      Colors.red,
+                      Colors.blue,
+                      Colors.green,
+                      Colors.purple,
+                      Colors.orange,
+                      Colors.pink,
+                      Colors.cyan,
+                      Colors.amber,
+                      Colors.indigo,
+                      Colors.teal,
+                    ].map((color) {
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            currentColors[index] = color;
+                          });
+                          Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            color: color,
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(color: Colors.grey, width: 1),
+                          ),
+                        ),
+                      );
+                    }).toList(),
               ),
             ],
           ),
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Close'),
-          ),
-        ],
+        actions: [TextButton(onPressed: () => Navigator.of(context).pop(), child: const Text('Close'))],
       ),
     );
   }
@@ -693,7 +574,7 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
     final green = (currentColor.g * 255.0).round();
     final blue = (currentColor.b * 255.0).round();
     final alpha = (currentColor.a * 255.0).round();
-    
+
     return Column(
       children: [
         Container(
@@ -712,12 +593,7 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
           max: 255,
           divisions: 255,
           onChanged: (value) {
-            onColorChanged(Color.fromARGB(
-              alpha,
-              value.toInt(),
-              green,
-              blue,
-            ));
+            onColorChanged(Color.fromARGB(alpha, value.toInt(), green, blue));
           },
         ),
         const Text('Green'),
@@ -726,12 +602,7 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
           max: 255,
           divisions: 255,
           onChanged: (value) {
-            onColorChanged(Color.fromARGB(
-              alpha,
-              red,
-              value.toInt(),
-              blue,
-            ));
+            onColorChanged(Color.fromARGB(alpha, red, value.toInt(), blue));
           },
         ),
         const Text('Blue'),
@@ -740,12 +611,7 @@ class _BackgroundCanvasDemoState extends State<BackgroundCanvasDemo> {
           max: 255,
           divisions: 255,
           onChanged: (value) {
-            onColorChanged(Color.fromARGB(
-              alpha,
-              red,
-              green,
-              value.toInt(),
-            ));
+            onColorChanged(Color.fromARGB(alpha, red, green, value.toInt()));
           },
         ),
       ],
