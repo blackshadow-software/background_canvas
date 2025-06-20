@@ -1,3 +1,7 @@
+// Export all painter files for organized structure
+export 'painters/all_painters.dart';
+
+// Legacy single-file import - keeping for compatibility
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
